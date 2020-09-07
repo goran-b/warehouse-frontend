@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);
+
+// _variables.scss
+*{
+  box-sizing: border-box;
+ 
+}
+//colors
+$color-brand: #FF9933;
+$color-charcoal: #242423;
+$color-offwhite: #f2f2f2;
+$color-red: #DB4A3C;
+$color-green: #90CA74;
+$color-yellow: #FFCC00;
+$color-blue: #4CB7DB;
+
+//fonts
+$font-family-sans: 'Lato', sans-serif;
+$font-family-serif: 'Arvo', serif;
+$font-size-base: 1em;
+$font-size-lg: 1.2em;
+$font-size-sm: 0.875em;
+
+//breakpoints
+$breakpoint-xs: 400px;
+$breakpoint-sm: 550px;
+$breakpoint-md: 750px;
+$breakpoint-lg: 1000px;
+$breakpoint-xl: 1200px;
+
+//misc
+$spacing-unit: 32px;
+
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background-color: $color-charcoal;
+  min-width: 550px;
+}
+
+@media (min-width: 600px) {
+    $spacing-unit: 34px;
+}
+@media (min-width: $breakpoint-md) {
+    $spacing-unit: 38px;
+}
+@media (min-width: $breakpoint-lg) {
+    $spacing-unit: 40px;
+}
+@media (min-width: $breakpoint-xl) {
+    $spacing-unit: 44px;
+}
