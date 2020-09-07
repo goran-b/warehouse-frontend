@@ -1,0 +1,127 @@
+@import './../../../styles.scss';
+
+
+
+.cf:after,
+.cf:before {
+    content: "";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: $color-brand;
+    min-height: $spacing-unit * 1.5;
+    width: 100%;
+    z-index: 5;
+
+    a {
+        font-size: $spacing-unit * .6;
+        text-decoration: none;
+        display: block;
+        @include transition (all, .3s, ease);
+
+        &,
+        &:visited {
+            color: #fff;
+        }
+    }
+
+    .container {
+        padding: 0;
+    }
+}
+
+.navbar-nav {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        line-height: $spacing-unit * 1.5;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #fff;
+
+            a {
+                color: $color-brand;
+            }
+        }
+
+        a {
+            padding: 0 $spacing-unit;
+        }
+    }
+}
+
+.navbar-hamburger {
+    display: flex;
+    justify-content: flex-end;
+    ;
+    padding: 1em;
+    width: calc(100%-1em);
+    line-height: $spacing-unit * 1.5;
+    text-align: center;
+
+
+    img {
+        object-position: center;
+
+        &:hover {
+            cursor: pointer;
+            background-color: fade-out(#fff, .8);
+        }
+    }
+}
+
+.navbar-checkbox {
+    display: none;
+}
+
+
+
+//large screen
+@media (min-width: 645px) {
+    .navbar-nav {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+
+        &>li {
+            display: inline-block;
+
+            a {
+                padding: 0 20px;
+            }
+
+
+        }
+    }
+
+    .navbar-hamburger {
+        display: none;
+    }
+
+}
+
+.navbar-checkbox {
+    &:checked {
+        ~.navbar-nav {
+            display: block;
+        }
+    }
+
+    &:checked {
+        ~.navbar-hamburger {
+            color: #fff;
+        }
+    }
+}

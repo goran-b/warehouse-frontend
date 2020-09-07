@@ -1,0 +1,123 @@
+@import './../../styles.scss';
+
+
+.container {
+    height: 100%;
+}
+
+.title {
+    position: relative;
+    top: -6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+
+    h2 {
+        color: $color-offwhite;
+
+    }
+
+    .back {
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.cards {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+    .card {
+        background-color: $color-blue;
+        width: 250px;
+        margin: 1em;
+        min-height: 250px;
+        max-height: 550px;
+        height: 100%;
+        padding: 0;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1.1fr 0.4fr 1.5fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "face face"
+            "size price"
+            "list list";
+    }
+
+    .card:nth-child(5) {
+        background-color: $color-red;
+    }
+
+    .card:nth-child(2) {
+        background-color: $color-brand;
+    }
+
+    .card:nth-child(3) {
+        background-color: $color-yellow;
+    }
+
+    .card:nth-child(4) {
+        background-color: $color-green;
+    }
+
+    .face {
+        grid-area: face;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border: 1em inset;
+
+        span {
+            font-size: 2em;
+        }
+    }
+
+    .size {
+        grid-area: size;
+    }
+
+    .price {
+        grid-area: price;
+    }
+    h3{
+        font-size:0.9em;
+    }
+
+    .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        grid-area: list;
+        text-align: center;
+
+        h2 {
+            font-size: 1em;
+        }
+
+        #list-name {
+
+            text-transform: uppercase;
+        }
+
+        li {
+            border-top: 0.15px white solid;
+            border-collapse: collapse;
+            color: $color-offwhite;
+        }
+
+    }
+}
+
+
+@media (min-width: 600px) {}
