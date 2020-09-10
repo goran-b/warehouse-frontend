@@ -15,7 +15,6 @@
 
     h2 {
         color: $color-offwhite;
-
     }
 
     .back {
@@ -26,6 +25,17 @@
     }
 }
 
+.msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+
+    h2 {
+        color: $color-red;
+    }
+}
+
 .cards {
     position: absolute;
     width: 100%;
@@ -33,14 +43,14 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
+    margin-bottom: 5em;
 
     .card {
         background-color: $color-blue;
         width: 250px;
         margin: 1em;
         min-height: 250px;
-        max-height: 550px;
+        max-height: 650px;
         height: 100%;
         padding: 0;
         text-align: center;
@@ -90,8 +100,9 @@
     .price {
         grid-area: price;
     }
-    h3{
-        font-size:0.9em;
+
+    h3 {
+        font-size: 0.9em;
     }
 
     .list {
@@ -118,6 +129,3 @@
 
     }
 }
-
-
-@media (min-width: 600px) {}
