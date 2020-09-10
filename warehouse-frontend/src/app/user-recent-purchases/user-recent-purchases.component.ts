@@ -7,20 +7,23 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './user-recent-purchases.component.html',
   styleUrls: ['./user-recent-purchases.component.scss']
 })
-export class UserRecentPurchasesComponent implements OnInit {
-  public purchases
-  username: string
+export class UserRecentPurchasesComponent {
   private sub: any;
-  constructor(private service: RecentPurchasesService, private route: ActivatedRoute) { }
+  public purchases
+  public username: string
+  public msg: string
 
-  ngOnInit(): void {
+  constructor(private service: RecentPurchasesService, private route: ActivatedRoute) {
     this.sub = this.route.params.subscribe(params => {
       this.username = params['id'];
-      this.service.getRecentPurchases(this.username).subscribe((response) => {
-        this.purchases = Object.values(response)
-      }
+      this.service.getRecentPurchases(this.username).subscribe(
+        (response) => {
+          this.purchases = Object.values(response)
+        }, err => {
+          console.log('HTTP Error', err)
+          this.msg=err.error.detail
+        }
       )
     })
   }
-
 }
