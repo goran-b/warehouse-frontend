@@ -35,7 +35,7 @@
             list-style: none;
             margin:2px 0;
             padding: 0.75em;
-            transition: all .2s ease-in-out;
+            transition: all .1s ease-in-out;
             a{
                 font-size: 1.2em;
                 font-weight: 700;
@@ -48,7 +48,7 @@
         }
         li:hover{
             background-color: $color-blue;
-            transform: scale(1.1);
+            transform: scale(1.05);
             a{
             color: $color-offwhite;
         }

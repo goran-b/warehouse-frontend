@@ -9,7 +9,7 @@
     <div class="users column">
         <h3>Check buyer's popular purchases:</h3>
         <ul>
-            <li *ngFor="let user of users"><a routerLink='/userpurchases/{{ user.username }}'>{{ user.username }}</a> </li>
+            <li *ngFor="let user of users$ | async"><a routerLink='/userpurchases/{{ user.username }}'>{{ user.username }}</a> </li>
         </ul>
     </div>
 </div>
