@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
 import { UsersService } from '../services/users.service';
 
 @Component({
@@ -7,13 +9,11 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public users
-  constructor(private service: UsersService) { }
+
+  users$:Observable<User[]>
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-    this.service.getUsers().subscribe((response) => {
-      this.users = Object.values(response)
-    }
-    )
+    this.users$=this.usersService.users$
   }
 }
