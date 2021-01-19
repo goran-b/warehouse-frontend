@@ -1,5 +1,7 @@
 # warehouse-frontend(Angular)
+Continuation of the warehouse project
 Frontend for Warehouse project made in Angular 11
+
 Live version: https://warehouse-frontend.web.app
 
 
